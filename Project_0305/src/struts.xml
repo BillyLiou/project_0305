@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="Project_0305" namespace="/" extends="struts-default">
+        <action name="index">
+            <result>index.html</result>
+        </action>
+		
+        <action name="Login" class="com.local.Login" method="execute">
+            <result name="success">/menu.jsp</result>
+            <result name="error">/log/failure.jsp</result>
+        </action>
+        
+        <action name="MessageAction" class="com.local.MessageAction" method="execute">
+            <result name="success">/success.jsp</result>            
+        </action>
+
+    </package>
+</struts>

@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+.userInfo{
+	position:absolute;
+	width:300px;
+	right:30px;
+	top:30px;
+}
+
+/*登入頁面*/
+div.log{
+	border:1px solid black;
+	padding:30px;
+	margin:20px auto;
+	width:50%;
+}
+
+/*container*/
+
+.container{
+	border: 2px black solid;
+	margin:50px auto;
+}
+
+/*這一區為公告欄的選項*/
+.row{
+	background-color:#31D3FF;
+}
+
+button {
+	display:block;
+	width:100%;
+}
+
+.col-6 a button{
+	font-size:40px;
+}
+.col-6,.col-3{
+	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	font-size:50px;
+	text-align: center;
+	line-height: 80px;
+	vertical-align:middle;
+}
+.col-6,.col-3{
+	border-bottom: 2px black solid;
+	transition: all 0.1s;
+}
+
+.col-6:hover , .col-3:hover {
+	background-color: aquamarine;	
+	
+}
+.col-6:hover button , .col-3:hover button {
+	color:#095602;
+	text-shadow: 1px 1px 2px gray;
+	text-decoration:none;	
+}
+
+a{
+	display:block;
+	text-decoration:none
+}
+
+.col-6:active button a,.col-3:active button a{
+	-ms-transform: translate(2px, 2px); /* IE 9 */
+    -webkit-transform: translate(2px, 2px); /* Safari */
+    transform: translate(2px, 2px);
+}
+
+
+/*這一區為內容手則*/
+
+.content1{
+	margin: 20px auto;
+	width:60%;
+}
+
+.content1 h2{
+	text-align: center;
+	margin:20px;
+}
+
+.list-group-item.active{
+	background-color: #31D3FF;
+	color:black;
+	border: none;
+}
+
+.list-group-item{
+	color:black;
+}
+
+.list-group-item:hover, .list-group-item.active:hover{
+	color:#095602;
+	text-shadow: 1px 1px 2px gray;
+}
+
+.list-group-item:active  h5, .list-group-item.active:active  h5{
+	-ms-transform: translate(2px, 2px); /* IE 9 */
+    -webkit-transform: translate(2px, 2px); /* Safari */
+    transform: translate(2px, 2px);
+}
+
+/*編輯內文*/
+fieldset{
+	padding:20px;
+	margin:20px auto;
+}
+
+/*留言板樣式*/
+
+.topic {
+	position:relative;
+	background-color:aqua;
+	padding: 5px;
+	border: 2px solid black;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+}
+
+.edit{
+
+	position:absolute;
+	right:10%;	
+}
+.edit:hover{
+	text-decoration: underline;
+	color:#00138E;
+}
+
+.message_info{
+		background-color:#A0F6FF;
+	padding: 5px;
+	border: 2px solid black;
+}
+
+
