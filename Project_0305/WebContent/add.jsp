@@ -18,10 +18,11 @@ window.onload = function(){
 	/* var date; 
 	date = (today.getFullYear()) +"-" + (today.getMonth() + 1 ) + "-" + today.getDate() + "-" + today.toLocaleTimeString(); 
 	return date;
-	} */
-	window.setInterval(function(){
+	} 
+	
 	document.getElementById("getTime").value=getDate();
-	}, 1000);
+}
+	
 	
 
 </script>
