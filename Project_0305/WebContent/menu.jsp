@@ -18,7 +18,8 @@
 
 <!-- 此為登入使用者在右上角顯示為管理者 -->
 <div class="userInfo">
-管理者: ${user}
+管理者: ${user}<form name="form1" action="Logout.action" method="post"><input type="submit" value="登出"></form>
+
 </div>
 
 <div class="container">
@@ -32,7 +33,8 @@
     </div>
     <div class="col-3">
       <a href="edit.jsp"><button type="button" class="btn btn-lg">編輯留言</button></a>
-    </div>
+    </div> 
+    
   </div>
   
   <!-- 以下是網頁的中間內容 -->

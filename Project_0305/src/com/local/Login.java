@@ -18,12 +18,19 @@ public class Login extends ActionSupport {
 	private String name ;
 	private String pass ;
 	private List<Message> message_list = new ArrayList<Message>();
-	
+	//開啟Session,相當於開啟JDBC的connection 
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    
+    //建立httpSession
+    HttpServletRequest request = ServletActionContext.getRequest();
+    HttpSession httpSession = request.getSession();
+    
 	public String execute() throws Exception{
-		if(this.name.equals("Billy") && this.pass.equals("0000")) {			
-			//開啟Session,相當於開啟JDBC的connection 
-		    Session session = HibernateUtil.getSessionFactory().openSession();
-		    
+		if(this.name.equals("Billy") && this.pass.equals("0000")) {		
+			
+			//start a transaction
+		    session.beginTransaction();
+
 			// 使用HQL建立查詢
 	        Query query = session.createQuery("from Message");
 	        Iterator messages = query.list().iterator();
@@ -39,23 +46,24 @@ public class Login extends ActionSupport {
 	                    "/" + message.getReleaseDate()+
 	                    "/" + message.getDateline() +
 	                    "/" + message.getContent()); 
-	        }
-	        
-//	        session.close();
-//	        HibernateUtil.shutdown();
-	        
-	        //建立session
-		    HttpServletRequest request = ServletActionContext.getRequest();
-		    HttpSession httpSession = request.getSession();
+	        }	    
+//		    session.close();
+//	        HibernateUtil.shutdown(); 
 		    httpSession.setAttribute("model", message_list);
 		    httpSession.setAttribute("user", "Billy");
-		    
-		    
 
 			return SUCCESS;
 		}else {
 			return ERROR;
 		}
+	}
+	
+	public String logout() throws Exception{
+		session.close();
+//		HibernateUtil.shutdown();
+		httpSession.invalidate();
+		System.out.println("成功關閉這些東東");
+		return SUCCESS;
 	}
 
 	public String getName() {

@@ -10,8 +10,22 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<script type="text/javascript">
+window.onload = function(){
+	function getDate(){
+	debugger;
+	var today = new Date(); 
+	/* var date; 
+	date = (today.getFullYear()) +"-" + (today.getMonth() + 1 ) + "-" + today.getDate() + "-" + today.toLocaleTimeString(); 
+	return date;
+	} */
+	window.setInterval(function(){
+	document.getElementById("getTime").value=getDate();
+	}, 1000);
+	
 
-<body>
+</script>
+
 <!-- 此為登入使用者在右上角顯示為管理者 -->
 <div class="userInfo">
 管理者: ${user}
@@ -38,8 +52,8 @@
 				<form name="form1" action="MessageAction.action" method="post">
 					<label>標題:</label><input type="text" name="topic" placeholder="標題" required/><br>
 					<label>發布者: </label><input type="text" name="name"
-						placeholder="發佈者" required/><br> <label>發布時間: </label><input
-						type="date" name="releaseDate" required/><br> <label>截止時間: </label><input
+						placeholder="發佈者"  required/><br> <label>發布時間: </label><input
+						type="date" name="releaseDate" id="getTime" required/><br> <label>截止時間: </label><input
 						type="date" name="dateline" required/><br>
 					<textarea rows="4" cols="50" placeholder="請輸入內文" name="content" required
 					></textarea>
